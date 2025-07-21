@@ -148,17 +148,77 @@ body{
     box-shadow: 0 8px 40px 0 rgba(0,0,0,0.08);
     opacity: 0.95;
     overflow: hidden;
+    animation: blob-rotate 12s ease-in-out infinite alternate;
 }
 
 .shape1 {
     transform: translate(-50%, -50%) rotate(105deg);
+    animation-delay: 0s;
+    animation-duration: 14s;
 }
 
 .shape2 {
     transform: translate(-50%, -50%) rotate(112deg);
     opacity: 0.85;
+    animation-delay: 2s;
+    animation-duration: 16s;
 }
 .heroText > *:not(.bg-shape) {
     position: relative;
     z-index: 1;
+}
+
+@keyframes blob-rotate {
+    0% {
+        transform: translateY(-50%) rotate(25deg) scale(1);
+    }
+    50% {
+        transform: translateY(-50%) rotate(35deg) scale(1.08);
+    }
+    100% {
+        transform: translateY(-50%) rotate(25deg) scale(1);
+    }
+}
+
+.hit-text-container.above {
+    animation: float 4s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(-24px);
+    }
+}
+
+.marquee {
+    width: 100vw;
+    overflow: hidden;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.marquee-inner {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 16s linear infinite;
+}
+
+.marquee-inner span {
+    font-family: 'Nitro-Break', 'Nothing', sans-serif;
+    font-size: 2vw;
+    color: #00bcd4;
+    letter-spacing: 0.2em;
+    text-shadow: 0 2px 8px #000;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
