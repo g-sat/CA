@@ -6,10 +6,27 @@
     <title>Tech Fest</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="/assets/sg.svg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">IITB Tech Fest</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="heroImage">
                 <img id="image" src="./assets/Untitled design (1).png"/>
                 <div class="hit-text-container">
@@ -23,11 +40,33 @@
             <div class="heroText">
                 <div class="bg-shape shape1"></div>
                 <div class="bg-shape shape2"></div>
-                <h2 class="headline wavy-glitch">IITB Tech Fest</h2>
-                <p class="tagline fade-up">IIT Bombay's annual confluence of innovation, technology, and visionary minds. Dive into a weekend of groundbreaking ideas.</p>
-                <a href="#events" class="cta">Explore Events</a>
+                <h2 class="headline wavy-glitch animate-headline">IITB Tech Fest</h2>
+                <p class="tagline fade-up animate-tagline">IIT Bombay's annual confluence of innovation, technology, and visionary minds. Dive into a weekend of groundbreaking ideas.</p>
+                <a href="#events" class="cta animate-cta">Explore Events</a>
             </div>
         </section>
+        
+        <!-- Additional sections for scroll animations -->
+        <section class="events-section" id="events">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Featured Events</h2>
+                <div class="events-grid">
+                    <div class="event-card animate-on-scroll">
+                        <h3>Hackathon</h3>
+                        <p>48 hours of intense coding and innovation</p>
+                    </div>
+                    <div class="event-card animate-on-scroll">
+                        <h3>Tech Talks</h3>
+                        <p>Insights from industry leaders and innovators</p>
+                    </div>
+                    <div class="event-card animate-on-scroll">
+                        <h3>Workshops</h3>
+                        <p>Hands-on learning with cutting-edge technology</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="marquee">
             <div class="marquee-inner">
                 <span>IGNITE THE FUTURE &nbsp; IGNITE THE FUTURE &nbsp; IGNITE THE FUTURE &nbsp; IGNITE THE FUTURE &nbsp; IGNITE THE FUTURE &nbsp; IGNITE THE FUTURE &nbsp; IGNITE THE FUTURE &nbsp; IGNITE THE FUTURE &nbsp;</span>
@@ -35,5 +74,7 @@
             </div>
         </div>
     </main>
+
+    <script src="animations.js"></script>
 </body>
 </html> 
